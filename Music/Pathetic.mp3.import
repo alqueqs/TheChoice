@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Pathetic.mp3-6508e9053c4d1b1d24cf6e0b60906d33.mp3str"
+
+[deps]
+
+source_file="res://Music/Pathetic.mp3"
+dest_files=[ "res://.import/Pathetic.mp3-6508e9053c4d1b1d24cf6e0b60906d33.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
