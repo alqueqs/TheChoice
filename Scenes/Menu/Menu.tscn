@@ -1,0 +1,493 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Fonts/20552.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/Menu.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=9]
+size = 112
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.470588, 0.415686, 0.517647, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.360784, 0.317647, 0.396078, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.603922, 0.537255, 0.658824, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.509804, 0.447059, 0.560784, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=11]
+size = 64
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.470588, 0.415686, 0.517647, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.447059, 0.447059, 0.447059, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.360784, 0.317647, 0.396078, 1 )
+border_color = Color( 0.215686, 0.215686, 0.215686, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.603922, 0.537255, 0.658824, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=15]
+size = 48
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=16]
+resource_name = "Begin"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Transition:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Transition:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "End"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Transition:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Transition:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0980392, 0.0980392, 0.137255, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TheChoice" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -221.0
+margin_top = -195.698
+margin_right = 221.0
+margin_bottom = -78.6984
+custom_fonts/font = SubResource( 9 )
+text = "The Choice"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="One" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Button" parent="One"]
+anchor_left = 0.395833
+anchor_top = 0.425926
+anchor_right = 0.604167
+anchor_bottom = 0.574074
+margin_top = -1.52588e-05
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 1 )
+text = "PLAY"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Quit" type="Button" parent="One"]
+anchor_left = 0.395833
+anchor_top = 0.611111
+anchor_right = 0.604167
+anchor_bottom = 0.759259
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 1 )
+text = "QUIT"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Two" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Save" type="Control" parent="Two"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Save1" type="Button" parent="Two/Save"]
+anchor_left = 0.354167
+anchor_top = 0.240741
+anchor_right = 0.645833
+anchor_bottom = 0.388889
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 1 )
+text = "NEW SAVE"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Save2" type="Button" parent="Two/Save"]
+anchor_left = 0.354167
+anchor_top = 0.425926
+anchor_right = 0.645833
+anchor_bottom = 0.574074
+margin_top = -1.52588e-05
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 1 )
+text = "NEW SAVE"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Save3" type="Button" parent="Two/Save"]
+anchor_left = 0.354167
+anchor_top = 0.611111
+anchor_right = 0.645833
+anchor_bottom = 0.759259
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 1 )
+text = "NEW SAVE"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Load" type="Control" parent="Two"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Load1" type="Button" parent="Two/Load"]
+anchor_left = 0.354167
+anchor_top = 0.240741
+anchor_right = 0.5625
+anchor_bottom = 0.388889
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 1 )
+text = "SAVE1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Delete1" type="Button" parent="Two/Load"]
+anchor_left = 0.583333
+anchor_top = 0.240741
+anchor_right = 0.645833
+anchor_bottom = 0.388889
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 1 )
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Load2" type="Button" parent="Two/Load"]
+anchor_left = 0.354167
+anchor_top = 0.425926
+anchor_right = 0.5625
+anchor_bottom = 0.574074
+margin_top = -1.52588e-05
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 1 )
+text = "SAVE2"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Delete2" type="Button" parent="Two/Load"]
+anchor_left = 0.354167
+anchor_top = 0.425926
+anchor_right = 0.645833
+anchor_bottom = 0.574074
+margin_left = 220.0
+margin_top = -1.52588e-05
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 1 )
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Load3" type="Button" parent="Two/Load"]
+anchor_left = 0.354167
+anchor_top = 0.611111
+anchor_right = 0.5625
+anchor_bottom = 0.759259
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 1 )
+text = "SAVE3"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Delete3" type="Button" parent="Two/Load"]
+anchor_left = 0.583333
+anchor_top = 0.611111
+anchor_right = 0.645833
+anchor_bottom = 0.759259
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 1 )
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Back" type="Button" parent="Two"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 150.0
+margin_bottom = 90.0
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 1 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Black" type="ColorRect" parent="Two"]
+visible = false
+modulate = Color( 0, 0, 0, 0.392157 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="YesNo" type="Panel" parent="Two"]
+visible = false
+anchor_left = 0.28125
+anchor_top = 0.238889
+anchor_right = 0.71875
+anchor_bottom = 0.761111
+margin_bottom = -3.05176e-05
+custom_styles/panel = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": true
+}
+
+[node name="AreYouSure" type="Label" parent="Two/YesNo"]
+anchor_left = 0.109524
+anchor_top = 0.133014
+anchor_right = 0.890476
+anchor_bottom = 0.374149
+custom_fonts/font = SubResource( 11 )
+text = "Are you sure?"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Ok" type="Button" parent="Two/YesNo"]
+anchor_left = 0.0833333
+anchor_top = 0.64539
+anchor_right = 0.440476
+anchor_bottom = 0.929078
+custom_styles/hover = SubResource( 13 )
+custom_styles/pressed = SubResource( 14 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 12 )
+custom_fonts/font = SubResource( 15 )
+text = "OK"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Cancel" type="Button" parent="Two/YesNo"]
+anchor_left = 0.559524
+anchor_top = 0.648549
+anchor_right = 0.916667
+anchor_bottom = 0.932237
+custom_styles/hover = SubResource( 13 )
+custom_styles/pressed = SubResource( 14 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 12 )
+custom_fonts/font = SubResource( 15 )
+text = "CANCEL"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Transition" type="Control" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Transition"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Begin"
+anims/Begin = SubResource( 16 )
+anims/End = SubResource( 17 )
+
+[connection signal="pressed" from="One/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="One/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="Two/Back" to="." method="_on_Back_pressed"]

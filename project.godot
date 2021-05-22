@@ -11,7 +11,23 @@ config_version=4
 [application]
 
 config/name="TheChoice"
+run/main_scene="res://Scenes/SplashBoot/SplashBoot.tscn"
+boot_splash/image="res://Assets/SplashBoot/back.png"
+boot_splash/bg_color=Color( 0.12549, 0.145098, 0.192157, 1 )
 config/icon="res://icon.png"
+config/windows_native_icon="res://icon.ico"
+
+[autoload]
+
+Global="*res://Scripts/Global.gd"
+
+[display]
+
+window/size/width=960
+window/size/height=540
+window/size/fullscreen=true
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [importer_defaults]
 
@@ -35,6 +51,14 @@ texture={
 "stream": false,
 "svg/scale": 1.0
 }
+
+[layer_names]
+
+2d_physics/layer_1="world"
+2d_physics/layer_2="player"
+2d_physics/layer_3="enemy"
+2d_physics/layer_4="hitbox"
+2d_physics/layer_5="hurtbox"
 
 [physics]
 

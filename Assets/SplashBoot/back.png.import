@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/2.png-cc663de4406a4c633a644f02e766d120.stex"
+path="res://.import/back.png-d6c95d73352d9ab78a4c92ad8df14514.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Prologue/Locations/2.png"
-dest_files=[ "res://.import/2.png-cc663de4406a4c633a644f02e766d120.stex" ]
+source_file="res://Assets/SplashBoot/back.png"
+dest_files=[ "res://.import/back.png-d6c95d73352d9ab78a4c92ad8df14514.stex" ]
 
 [params]
 
