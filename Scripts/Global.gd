@@ -1,3 +1,6 @@
 extends Node
 
-var player_pos = Vector2(0, 0)
+var has_black_orb = false
+
+var player_pos_main = Vector2(293, 130)
+var player_pos_right = Vector2(8, 93)

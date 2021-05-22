@@ -1,11 +1,18 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Prologue/Locations/2.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Prologue/ProloguePlayer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/PrologueRight.gd" type="Script" id=3]
+[ext_resource path="res://Fonts/20552.otf" type="DynamicFontData" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 72, 95 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+[sub_resource type="DynamicFont" id=5]
+use_filter = true
+font_data = ExtResource( 4 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Begin"
@@ -32,6 +39,34 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Door"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Door/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Door/Label:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -3, -27 ), Vector2( -3, -29 ), Vector2( -3, -26 ), Vector2( -3, -27 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -107,25 +142,7 @@ polygon = PoolVector2Array( 672, 192, 672, 16, 736, 16, 736, 192 )
 collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Back/Ladder"]
-polygon = PoolVector2Array( 131, 192, 121, 187, 106, 187, 88, 180, 88, 180, 71, 173, 57, 169, 50, 167, 46, 165, 42, 163, 18, 152, -7, 152, -13, 152, -13, 192 )
-
-[node name="PlayerPosition" type="Position2D" parent="."]
-position = Vector2( 8, 93 )
-
-[node name="ProloguePlayer" parent="PlayerPosition" instance=ExtResource( 2 )]
-
-[node name="Camera2D" type="Camera2D" parent="PlayerPosition/ProloguePlayer"]
-current = true
-zoom = Vector2( 0.37, 0.37 )
-process_mode = 0
-limit_left = 0
-limit_top = 0
-limit_right = 736
-limit_bottom = 200
-smoothing_enabled = true
-smoothing_speed = 10.0
-editor_draw_limits = true
-editor_draw_drag_margin = true
+polygon = PoolVector2Array( 131, 192, 121, 187, 106, 187, 88, 180, 88, 180, 71, 173, 57, 169, 50, 167, 46, 165, 42, 163, 18, 152, -7, 152, -83, 152, -83, 192 )
 
 [node name="Left" type="Area2D" parent="."]
 position = Vector2( -83, 101 )
@@ -138,10 +155,49 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
 shape = SubResource( 1 )
 
+[node name="Door" type="Area2D" parent="."]
+position = Vector2( 637, 144 )
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+shape = SubResource( 4 )
+
+[node name="Label" type="Label" parent="Door"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -3.0
+margin_top = -27.0
+margin_right = 4.0
+margin_bottom = -9.0
+custom_fonts/font = SubResource( 5 )
+text = "E"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerPosition" type="Position2D" parent="."]
+position = Vector2( 8, 93 )
+
+[node name="ProloguePlayer" parent="." instance=ExtResource( 2 )]
+position = Vector2( 8, 93 )
+
+[node name="Camera2D" type="Camera2D" parent="ProloguePlayer"]
+current = true
+zoom = Vector2( 0.37, 0.37 )
+process_mode = 0
+limit_left = 0
+limit_top = 0
+limit_right = 736
+limit_bottom = 200
+smoothing_enabled = true
+smoothing_speed = 10.0
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Transition" type="Control" parent="CanvasLayer"]
-modulate = Color( 1, 1, 1, 0.01 )
+modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -161,6 +217,9 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Begin"
 anims/Begin = SubResource( 2 )
+anims/Door = SubResource( 6 )
 anims/End = SubResource( 3 )
 
 [connection signal="body_entered" from="Left" to="." method="_on_Left_body_entered"]
+[connection signal="body_entered" from="Door" to="." method="_on_Door_body_entered"]
+[connection signal="body_exited" from="Door" to="." method="_on_Door_body_exited"]

@@ -3,7 +3,7 @@
 [ext_resource path="res://Fonts/20552.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/Menu.gd" type="Script" id=2]
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=1]
 size = 112
 use_filter = true
 font_data = ExtResource( 1 )
@@ -33,14 +33,14 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=7]
 size = 64
 use_filter = true
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxEmpty" id=7]
-
 [sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
 
 [sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0.509804, 0.447059, 0.560784, 1 )
@@ -54,7 +54,7 @@ size = 64
 use_filter = true
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxFlat" id=13]
+[sub_resource type="StyleBoxFlat" id=12]
 bg_color = Color( 0.470588, 0.415686, 0.517647, 1 )
 border_width_left = 5
 border_width_top = 5
@@ -66,7 +66,7 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxFlat" id=14]
+[sub_resource type="StyleBoxFlat" id=13]
 bg_color = Color( 0.360784, 0.317647, 0.396078, 1 )
 border_color = Color( 0.215686, 0.215686, 0.215686, 1 )
 corner_radius_top_left = 20
@@ -74,7 +74,7 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxFlat" id=12]
+[sub_resource type="StyleBoxFlat" id=14]
 bg_color = Color( 0.603922, 0.537255, 0.658824, 1 )
 corner_radius_top_left = 20
 corner_radius_top_right = 20
@@ -137,7 +137,21 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ false, true ]
+"values": [ true, false ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "transition_finished"
+} ]
 }
 
 [node name="Menu" type="Control"]
@@ -165,7 +179,7 @@ margin_left = -221.0
 margin_top = -195.698
 margin_right = 221.0
 margin_bottom = -78.6984
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 1 )
 text = "The Choice"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -190,7 +204,7 @@ custom_styles/pressed = SubResource( 3 )
 custom_styles/focus = SubResource( 4 )
 custom_styles/disabled = SubResource( 5 )
 custom_styles/normal = SubResource( 6 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 7 )
 text = "PLAY"
 __meta__ = {
 "_edit_use_anchors_": true
@@ -203,10 +217,10 @@ anchor_right = 0.604167
 anchor_bottom = 0.759259
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 3 )
-custom_styles/focus = SubResource( 7 )
-custom_styles/disabled = SubResource( 8 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
 custom_styles/normal = SubResource( 6 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 7 )
 text = "QUIT"
 __meta__ = {
 "_edit_use_anchors_": true
@@ -238,7 +252,7 @@ custom_styles/pressed = SubResource( 3 )
 custom_styles/focus = SubResource( 4 )
 custom_styles/disabled = SubResource( 5 )
 custom_styles/normal = SubResource( 6 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 7 )
 text = "NEW SAVE"
 __meta__ = {
 "_edit_use_anchors_": true
@@ -255,7 +269,7 @@ custom_styles/pressed = SubResource( 3 )
 custom_styles/focus = SubResource( 4 )
 custom_styles/disabled = SubResource( 5 )
 custom_styles/normal = SubResource( 6 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 7 )
 text = "NEW SAVE"
 __meta__ = {
 "_edit_use_anchors_": true
@@ -268,10 +282,10 @@ anchor_right = 0.645833
 anchor_bottom = 0.759259
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 3 )
-custom_styles/focus = SubResource( 7 )
-custom_styles/disabled = SubResource( 8 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
 custom_styles/normal = SubResource( 6 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 7 )
 text = "NEW SAVE"
 __meta__ = {
 "_edit_use_anchors_": true
@@ -295,7 +309,7 @@ custom_styles/pressed = SubResource( 3 )
 custom_styles/focus = SubResource( 4 )
 custom_styles/disabled = SubResource( 5 )
 custom_styles/normal = SubResource( 6 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 7 )
 text = "SAVE1"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -311,7 +325,7 @@ custom_styles/pressed = SubResource( 3 )
 custom_styles/focus = SubResource( 4 )
 custom_styles/disabled = SubResource( 5 )
 custom_styles/normal = SubResource( 6 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 7 )
 text = "X"
 __meta__ = {
 "_edit_use_anchors_": true
@@ -328,7 +342,7 @@ custom_styles/pressed = SubResource( 3 )
 custom_styles/focus = SubResource( 4 )
 custom_styles/disabled = SubResource( 5 )
 custom_styles/normal = SubResource( 6 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 7 )
 text = "SAVE2"
 __meta__ = {
 "_edit_use_anchors_": true
@@ -346,7 +360,7 @@ custom_styles/pressed = SubResource( 3 )
 custom_styles/focus = SubResource( 4 )
 custom_styles/disabled = SubResource( 5 )
 custom_styles/normal = SubResource( 6 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 7 )
 text = "X"
 __meta__ = {
 "_edit_use_anchors_": true
@@ -359,10 +373,10 @@ anchor_right = 0.5625
 anchor_bottom = 0.759259
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 3 )
-custom_styles/focus = SubResource( 7 )
-custom_styles/disabled = SubResource( 8 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
 custom_styles/normal = SubResource( 6 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 7 )
 text = "SAVE3"
 __meta__ = {
 "_edit_use_anchors_": true
@@ -375,10 +389,10 @@ anchor_right = 0.645833
 anchor_bottom = 0.759259
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 3 )
-custom_styles/focus = SubResource( 7 )
-custom_styles/disabled = SubResource( 8 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
 custom_styles/normal = SubResource( 6 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 7 )
 text = "X"
 __meta__ = {
 "_edit_use_anchors_": true
@@ -391,10 +405,10 @@ margin_right = 150.0
 margin_bottom = 90.0
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 3 )
-custom_styles/focus = SubResource( 7 )
-custom_styles/disabled = SubResource( 8 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
 custom_styles/normal = SubResource( 6 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 7 )
 text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -439,11 +453,11 @@ anchor_left = 0.0833333
 anchor_top = 0.64539
 anchor_right = 0.440476
 anchor_bottom = 0.929078
-custom_styles/hover = SubResource( 13 )
-custom_styles/pressed = SubResource( 14 )
-custom_styles/focus = SubResource( 7 )
-custom_styles/disabled = SubResource( 8 )
-custom_styles/normal = SubResource( 12 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 13 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 14 )
 custom_fonts/font = SubResource( 15 )
 text = "OK"
 __meta__ = {
@@ -455,11 +469,11 @@ anchor_left = 0.559524
 anchor_top = 0.648549
 anchor_right = 0.916667
 anchor_bottom = 0.932237
-custom_styles/hover = SubResource( 13 )
-custom_styles/pressed = SubResource( 14 )
-custom_styles/focus = SubResource( 7 )
-custom_styles/disabled = SubResource( 8 )
-custom_styles/normal = SubResource( 12 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 13 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 14 )
 custom_fonts/font = SubResource( 15 )
 text = "CANCEL"
 __meta__ = {
@@ -490,4 +504,5 @@ anims/End = SubResource( 17 )
 
 [connection signal="pressed" from="One/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="One/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="Two/Save/Save1" to="." method="_on_Save1_pressed"]
 [connection signal="pressed" from="Two/Back" to="." method="_on_Back_pressed"]

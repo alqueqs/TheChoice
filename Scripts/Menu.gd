@@ -2,6 +2,7 @@ extends Control
 
 func _ready():
 	$Two.hide()
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func transition_finished():
 	get_tree().change_scene("res://Scenes/Prologue/PrologueMain.tscn")
@@ -18,3 +19,6 @@ func _on_Back_pressed():
 	$Two.hide()
 	$One.show()
 	$TheChoice.show()
+
+func _on_Save1_pressed():
+	$AnimationPlayer.play("End")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Prologue/Locations/1.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Prologue/ProloguePlayer.tscn" type="PackedScene" id=2]
@@ -6,6 +6,9 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 72, 95 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 64, 88 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Begin"
@@ -87,7 +90,7 @@ centered = false
 collision_mask = 0
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Back/Floor"]
-polygon = PoolVector2Array( 300, 192, 916, 192, 916, 200, 300, 200 )
+polygon = PoolVector2Array( 132, 192, 1052, 192, 1052, 200, 132, 200 )
 
 [node name="Ceiling" type="StaticBody2D" parent="Back"]
 collision_mask = 0
@@ -95,18 +98,13 @@ collision_mask = 0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Back/Ceiling"]
 polygon = PoolVector2Array( 316, 64, 316, 24, 900, 24, 900, 64, 916, 64, 916, 0, 300, 0, 300, 64 )
 
-[node name="Door" type="StaticBody2D" parent="Back"]
-collision_mask = 0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Back/Door"]
-polygon = PoolVector2Array( 316, 64, 316, 192, 300, 192, 300, 64 )
-
 [node name="PlayerPosition" type="Position2D" parent="."]
 position = Vector2( 293, 130 )
 
-[node name="ProloguePlayer" parent="PlayerPosition" instance=ExtResource( 2 )]
+[node name="ProloguePlayer" parent="." instance=ExtResource( 2 )]
+position = Vector2( 293, 130 )
 
-[node name="Camera2D" type="Camera2D" parent="PlayerPosition/ProloguePlayer"]
+[node name="Camera2D" type="Camera2D" parent="ProloguePlayer"]
 current = true
 zoom = Vector2( 0.37, 0.37 )
 process_mode = 0
@@ -154,6 +152,17 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
 shape = SubResource( 1 )
 
+[node name="Left" type="Area2D" parent="."]
+position = Vector2( -56, 112 )
+collision_layer = 0
+collision_mask = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
+shape = SubResource( 4 )
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Transition" type="Control" parent="CanvasLayer"]
@@ -178,3 +187,4 @@ anims/Begin = SubResource( 2 )
 anims/End = SubResource( 3 )
 
 [connection signal="body_entered" from="Right" to="." method="_on_Right_body_entered"]
+[connection signal="body_entered" from="Left" to="." method="_on_Left_body_entered"]
