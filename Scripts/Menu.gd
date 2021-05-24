@@ -21,4 +21,5 @@ func _on_Back_pressed():
 	$TheChoice.show()
 
 func _on_Save1_pressed():
+	$Two/Save/Save1.disabled = true
 	$AnimationPlayer.play("End")

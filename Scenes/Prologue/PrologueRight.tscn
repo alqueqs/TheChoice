@@ -8,14 +8,13 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 72, 95 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=2]
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=3]
 use_filter = true
 font_data = ExtResource( 4 )
 
-[sub_resource type="Animation" id=2]
-resource_name = "Begin"
+[sub_resource type="Animation" id=4]
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Transition:modulate")
 tracks/0/interp = 1
@@ -41,7 +40,7 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 resource_name = "Door"
 length = 0.3
 tracks/0/type = "value"
@@ -69,8 +68,7 @@ tracks/1/keys = {
 "values": [ Vector2( -3, -27 ), Vector2( -3, -29 ), Vector2( -3, -26 ), Vector2( -3, -27 ) ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "End"
+[sub_resource type="Animation" id=6]
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Transition:modulate")
 tracks/0/interp = 1
@@ -161,7 +159,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Label" type="Label" parent="Door"]
 modulate = Color( 1, 1, 1, 0 )
@@ -169,7 +167,7 @@ margin_left = -3.0
 margin_top = -27.0
 margin_right = 4.0
 margin_bottom = -9.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 text = "E"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -216,9 +214,9 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Begin"
-anims/Begin = SubResource( 2 )
-anims/Door = SubResource( 6 )
-anims/End = SubResource( 3 )
+anims/Begin = SubResource( 4 )
+anims/Door = SubResource( 5 )
+anims/End = SubResource( 6 )
 
 [connection signal="body_entered" from="Left" to="." method="_on_Left_body_entered"]
 [connection signal="body_entered" from="Door" to="." method="_on_Door_body_entered"]
